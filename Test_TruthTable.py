@@ -56,7 +56,19 @@ class Test_TruthTable(unittest.TestCase):
                                     ['1', '1']])
 
     def test_toStr(self):
-        pass
+        e = Expression('A+B')
+        tt = TruthTable(e)
+        self.assertEqual(tt.toStr(), '|   A   |   B   |  Out  |\n|   0   |   0   |   0   |\n|   0   |   1   |   1   |\n|   1   |   0   |   1   |\n|   1   |   1   |   1   |\n')
+
+    def test_expressionIsUntouched(self):
+        e = Expression('A+B+C')
+        tt = TruthTable(e)
+
+        # integration test to make sure expression string is untouched
+        self.assertEqual(e.expression, 'A+B+C')
+
+        # integration test to make sure expression class is left on the first binary value (0)
+        self.assertEqual(e.digitValueBinary, 0)
 
 if __name__ == "__main__":
     unittest.main()

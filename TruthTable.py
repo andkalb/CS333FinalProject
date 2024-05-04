@@ -40,4 +40,13 @@ class TruthTable:
         return table
     
     def toStr(self):
-        pass
+        ret = ''
+        for row in self.table:
+            ret += "|"
+            for entry in row:
+                if entry == "Out":
+                    ret += "  " + entry + "  |"
+                else:
+                    ret += "   " + entry + "   |"
+            ret += "\n"
+        return ret

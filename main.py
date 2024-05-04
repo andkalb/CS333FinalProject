@@ -15,8 +15,7 @@ def main():
         expression.removeWhiteSpace()
         if expression.checkSyntax():
             table = TruthTable(expression)
-            print(table.table)
-            #print(table.toStr())
+            print(table.toStr())
         else:
             print("Invalid Expression!")
 
