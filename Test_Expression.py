@@ -105,6 +105,8 @@ class Test_Expression(unittest.TestCase):
         self.assertEqual(e.toBinaryExpressionStr(), '0+00\'')
         e.nextBinaryValueForVariables()
         self.assertEqual(e.toBinaryExpressionStr(), '0+01\'')
+        e.nextBinaryValueForVariables()
+        self.assertEqual(e.toBinaryExpressionStr(), '0+10\'')
 
 if __name__ == '__main__':
     unittest.main()
