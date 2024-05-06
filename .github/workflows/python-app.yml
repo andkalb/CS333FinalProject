@@ -10,9 +10,9 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build-windows:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
 
     steps:
     - uses: actions/checkout@v4
@@ -20,6 +20,8 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
+        architecture: "x64"
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -64,9 +66,6 @@ jobs:
       with:
         tag_name: ${{ github.event.head_commit.message }}
         release_name: ${{ github.event.head_commit.message }}
-        overwrite: true
-        body: |
-          New Release
         draft: false
         prerelease: false
         
