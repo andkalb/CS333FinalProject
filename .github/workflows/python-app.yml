@@ -1,3 +1,5 @@
+# NOTE: to make a release, you must commit with a single word
+
 name: Python application
 
 on:
