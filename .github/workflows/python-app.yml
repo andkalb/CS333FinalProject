@@ -65,7 +65,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
         tag_name: Latest
-        release_name: Release Latest
+        release_name: ${{ github.event.head_commit.messag }}
         draft: false
         prerelease: false
         
