@@ -55,10 +55,6 @@ jobs:
         
     - name: Build exe
       run: pyinstaller --onefile --name TruthTable main.py
-    - uses: actions/upload-artifact@v2
-      with:
-        name: TruthTable
-        path: dist/TruthTable.exe
         
     - name: Create Release
       id: create_release
