@@ -24,6 +24,9 @@ class Test_Expression(unittest.TestCase):
         e = Expression('A+BC')
         self.assertEqual(e.checkSyntax(), True)
 
+        e = Expression('')
+        self.assertEqual(e.checkSyntax(), False)
+
         e.reset('AB')
         self.assertEqual(e.checkSyntax(), True)
 

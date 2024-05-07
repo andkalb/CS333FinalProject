@@ -13,6 +13,10 @@ class Expression:
         self.expression = self.expression.replace(' ', '')
 
     def checkSyntax(self):
+        # check not empty
+        if len(self.expression) == 0:
+            return False
+        
         # check that parentheses are matching
         count = 0
         for char in self.expression:
