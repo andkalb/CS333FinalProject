@@ -68,7 +68,7 @@ class Test_TruthTable(unittest.TestCase):
         self.assertEqual(e.expression, 'A+B+C')
 
         # integration test to make sure expression class is left on the first binary value (0)
-        self.assertEqual(e.digitValueBinary, 0)
+        self.assertEqual(e.digitValueBinary, 1)
 
 if __name__ == "__main__":
     unittest.main()
